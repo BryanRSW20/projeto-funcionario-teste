@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> JSoft | Projetos </title>
+</head> 
+<body>
+    
+    <nav class="navbar">
+      <div class="logo">
+          <span class="a"> JSoft |</span> <span class="b"> O futuro dos caninos </span>
+      </div>
+    <div class="navegacao">
+      <a href="/"> Home </a>
+        <a href="/sobre"> Sobre a JSoft </a>
+          <a href="./add"> Adicionar Projetos </a>
+            <a id="btn" href="./list"> Gerenciamento de Projetos </a>
+            <acronym title="Ativar/Desativar Modo Escuro"> <button class="botaodm" onclick="toggleDarkMode()"> <img style="width: 24px; height: 24px;" th:src="@{/css/img/brightness.png}" alt="Não deu não..."></button>  </acronym>
+      </div>
+
+  </nav>
+    <div class="texto-add">
+    <a class="botaoadd" href="./add"> Nova Entrada <i class="fa fa-plus"> </i></a>
+  </div>
+
+    <main class="list-main">
+
+      <h1> Projetos JSoft </h1>
+
+    <table class="table">
+            <th class="header">ID</th>
+              <th class="header">Nome</th>
+                <th class="header">Data Início</th>
+                  <th class="header">Data Final</th>
+                  <th class="header">Status</th>
+                <th class="header">Orçamento</th>
+              <th class="header">Editar</th>
+          <tr th:each="projeto:${projetos}">
+            <th scope="row" th:text="${projeto.id}"></th>
+                <td th:text="${projeto.nome}"></td>
+                <td th:text="${#dates.format(projeto.dataInicial, 'dd-MM-yyyy')}"></td>
+                 <td th:text="${#dates.format(projeto.dataFinal, 'dd-MM-yyyy')}"></td>
+                 <td th:text="${projeto.status}"></td>
+                 <td th:text="${'R$' + #numbers.formatDecimal(projeto.orcamento,1,'DEFAULT',2,'DEFAULT')}"></td>
+                <td colspan="2"> <a class="botaoadd" th:href="@{'./edit/' + ${projeto.id}}"><i class="fa fa-pencil"></i></a></td>
+          </tr>
+      </table>
+
+    </main>
+    <br>
+</div>
+<footer>
+    <br>
+    <div class="txtfooter">
+        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
+    </div>
+    
+</footer>
+</body>
+<script>
+    function toggleDarkMode() {
+    var dmBody = document.body;
+    dmBody.classList.toggle("dark-mode");
+  }
+</script>
+<script th:src="@{/js/temp.js}"></script>
+</html>

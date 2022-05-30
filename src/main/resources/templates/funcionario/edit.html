@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> JSoft | Funcionários </title>
+</head> 
+<body>
+    
+    <nav class="navbar">
+      <div class="logo">
+          <span class="a"> JSoft |</span> <span class="b"> O futuro dos caninos </span>
+      </div>
+      <div class="navegacao">
+          <a href="/"> Home </a>
+          <a href="/sobre"> Sobre a JSoft </a>
+          <a id="btn" href="./list"> Gerenciamento de Funcionários </a>
+          <acronym title="Ativar/Desativar Modo Escuro"> <button class="botaodm" onclick="toggleDarkMode()"> <img style="width: 24px; height: 24px;" th:src="@{/css/img/brightness.png}" alt="Não deu não..."></button>  </acronym>
+      </div>
+
+  </nav>
+
+  <div class="form-title">
+    <h1> Adicionar funcionário </h1>
+  </div>
+
+  <div th:if="${isSaved}" class="alerta-sucesso">
+    <h4> Operação Realizada com sucesso! </h4> <i class="fa fa-check-square"></i> 
+  </div>
+
+  <div th:if="${isError}" class="alerta-falha">
+    <h4> A Operação Falhou... </h4>
+    <label th:text="#{errorMsg}"></label>
+  </div>
+
+  <section class="form-add">
+  <form th:action="@{/funcionario/save}" method="POST" th:object="${funcionario}">
+      <h3> Registre o funcionário </h3>
+        
+        <label for="floatlabel-id"> ID (Identificação) </label> <br>
+      <input th:field="${funcionario.id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
+
+        <label for="floatlabel-nome"> Nome Completo </label> <br>
+      <input th:field="${funcionario.nome}" id="floatlabel-nome" type="text" placeholder="Nome" required> <br>
+        
+        <label for="floatlabel-cpf"> CPF </label> <br>
+      <input  th:field="${funcionario.cpf}"id="floatlabel-cpf" type="text" placeholder="CPF" required> <br>
+        
+        <label for="floatlabel-email"> Email </label> <br>
+      <input  th:field="${funcionario.email}" id="floatlabel-email" type="email" placeholder="Email" required> <br>
+    
+        <label for="floatlabel-tel"> Telefone </label> <br>
+      <input th:field="${funcionario.telefone}" id="floatlabel-tel" type="text" placeholder="Telefone" required> <br>
+        
+        <div class="form-add-btn">
+      <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
+      <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
+        </div>
+  </form>
+
+  
+
+</section>
+<footer>
+    <br>
+    <div class="txtfooter">
+        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
+    </div>
+    
+</footer>
+</body>
+<script>
+    function toggleDarkMode() {
+    var dmBody = document.body;
+    dmBody.classList.toggle("dark-mode");
+  }
+</script>
+<script th:src="@{/js/temp.js}"></script>
+</html>

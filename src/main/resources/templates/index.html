@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> JSoft | O Futuro dos caninos </title>
+</head> 
+<body>
+
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                    <li><a href="/"> Home </a></li>
+                    <li><a href="/sobre"> Sobre </a></li>
+                    <li><a class="dropdown" href="/funcionario/list"> Gerência </a></li>
+                    <li><a href="/teste"> Testes </a></li>
+                    <!-- <ul>
+                        <li>
+                            <a href="#"> Lista de Funcionários </a>
+                            <a href="#"> Lista de Projetos </a>
+                            <a href="#"> Adicionar Funcionário </a>
+                            <a href="#"> Adicionar Projeto </a>
+                        </li>
+                    </ul> -->
+            </ul>
+        </div>
+    </nav>
+    <acronym title="Ativar/Desativar Modo Escuro">
+         <button class="btn-dark-mode" onclick="toggleDarkMode()">
+             <i class="fa fa-sun"></i> </button>  
+    </acronym>
+  
+    <header class="header" id="header">
+        <h2> O que podemos desenvolver para você hoje? </h2>
+        <div class="img"> <img style="width: 70%;height: 640px; border-radius: 18px;" th:src="@{/css/img/foto-header.jpg}" alt=""> </div>
+    </header>
+
+    <main class="main">
+        <h2> Por que escolher a JSoft? </h2>
+        <div class="main-row">
+            <div class="main-card">
+                <!-- <img style="margin-top: 2%;" th:src="@{/css/img/badge.png}" alt=""> -->
+                <h3> Qualidade </h3>
+                <p> A JSoft é considerada a melhor empresa de tecnologia <br> da América Canina pela
+                    CaniTec™, levamos nosso serviço à sério, para entregar aos nossos clientes, tudo o quê eles desejam. </p>
+            </div>
+            <div class="main-card">
+                    <!-- <img style="width: 126px;height: 126px;margin-top: 2%;" th:src="@{/css/img/wall-clock.png}" alt=""> -->
+                    <h3> Agilidade </h3>
+                    <p> Na JSoft, focamos em entregar um bom produto dentro do menor tempo possível, a maioria dos projetos tem 100 cães atribuídos para garantir o menor prazo possível. </p>
+            </div>
+            <div class="main-card">
+                <!-- <img th:src="@{/css/img/sunrise.png}" alt=""> -->
+                <h3> Jornada de Trabalho </h3>
+                <p> A JSoft se importa muito com seus cães-funcionários, por isso, a maior jornada de trabalho diária é 6 horas, acredite, ninguém gosta de ver um cão mal-humorado </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- <div class="modal">
+        <h2> Aviso </h2>
+        <h4> Um minutinho da sua atenção! </h4>
+        <p> Você está prestes a deletar um registro, essa ação é permanente... </p>
+        <h4> Deseja continuar? </h4>
+        <div class="modal-buttons">
+            <button class="modal-buttons-delete"> Sim, deletar </button>
+            <button class="modal-buttons-cancel"> Não, cancelar </button>
+        </div>
+    </div> -->
+
+<footer class="footer">
+        <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>
+            Encontre-nos </p>
+
+        <div class="footer-content">
+
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+
+        </div>
+</footer> 
+</body>
+<script th:src="@{js/script.js}"></script>
+</html>

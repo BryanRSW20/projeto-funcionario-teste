@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> JSoft | Funcionários </title>
+</head> 
+<body>
+    
+    
+  <nav class="nav">
+    <div class="nav-logo">
+        <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+    </div>
+    <div class="nav-menu">
+        <ul>
+                <li><a href="/"> Home </a></li>
+                <li><a href="/sobre"> Sobre </a></li>
+                <li><a class="dropdown" href="/funcionario/list"> Gerência </a></li>
+                <li><a href="/teste"> Testes </a></li>
+                <!-- <ul>
+                    <li>
+                        <a href="#"> Lista de Funcionários </a>
+                        <a href="#"> Lista de Projetos </a>
+                        <a href="#"> Adicionar Funcionário </a>
+                        <a href="#"> Adicionar Projeto </a>
+                    </li>
+                </ul> -->
+        </ul>
+    </div>
+</nav>
+    <div class="texto-add">
+    <a class="botaoadd" href="./add"> Nova Entrada <i class="fa fa-plus"> </i></a>
+  </div>
+
+
+    <main class="list-main">
+    <table class="table">
+        <thead>
+          <tr>
+            <div class="bgCol">
+            <th scope="col">ID</th>
+              <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                  <th scope="col">CPF</th>
+                <th scope="col">Telefone</th>
+              <th scope="col">Editar</th>
+            
+            </div>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="funcionario:${funcionario3a}">
+            <th scope="row" th:text="${funcionario.id}"></th>
+             <td th:text="${funcionario.nome}"></td>
+                <td th:text="${funcionario.email}"></td>
+                 <td th:text="${funcionario.cpf}"></td>
+                 <td th:text="${funcionario.telefone}"></td>
+                <td> <a class="botaoadd" th:href="@{'./edit/' + ${funcionario.id}}"><i class="fa fa-pencil"></i></a></td>
+                <td> <a class="botaoadd" th:onclick="|showModalDeletar('funcionario', ${funcionario.id})|"><i class="fa fa-trash"></i></a></td>
+          </tr>
+         </tbody>
+      </table>
+
+      <div class="modal" tabindex="-1" id="modalDeletar">
+        <div class="modal-title">
+        <h2> Aviso </h2>
+        <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"> 
+          <i class="fa fa-times-circle"></i> 
+        </button>
+    </div>
+        <p> Você está prestes a deletar um registro, essa ação é <span class="modal-perm"> permanente </span> 
+         <strong>Deseja continuar?</strong> </p>
+        <div class="modal-buttons">
+            <button th:onclick="delete()" class="modal-buttons-delete"> <i class="fa fa-trash"></i>  Sim, deletar </button>
+            <button data-bs-dismiss="modal" class="modal-buttons-cancel"> <i class="fa fa-ban"></i> Não, cancelar </button>
+        </div>
+    </div>
+    </main>
+<footer>
+    <br>
+    <div class="txtfooter">
+        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
+    </div>
+    
+</footer>
+</body>
+<script>
+    function toggleDarkMode() {
+    var dmBody = document.body;
+    dmBody.classList.toggle("dark-mode");
+  }
+</script>
+<script th:src="@{/js/script.js}"></script>
+</html>

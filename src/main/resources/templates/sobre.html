@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title> JSoft | Sobre </title>
+</head> 
+<body>
+    <!--th:href="@{/css/style.css}" código pra aplicação do Spring Boot-->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                    <li><a href="/"> Home </a></li>
+                    <li><a href="/sobre"> Sobre </a></li>
+                    <li><a class="dropdown" href="/funcionario/list"> Gerência </a></li>
+                    <li><a href="/teste"> Testes </a></li>
+                    <!-- <ul>
+                        <li>
+                            <a href="#"> Lista de Funcionários </a>
+                            <a href="#"> Lista de Projetos </a>
+                            <a href="#"> Adicionar Funcionário </a>
+                            <a href="#"> Adicionar Projeto </a>
+                        </li>
+                    </ul> -->
+            </ul>
+        </div>
+    </nav>
+    <acronym title="Ativar/Desativar Modo Escuro">
+         <button class="btn-dark-mode" onclick="toggleDarkMode()">
+             <i class="fa fa-sun"></i> </button>  
+    </acronym>
+    <br>
+        <div class="conteudo">
+            <h3> Quem faz acontecer? </h3>
+        <br>
+    <div class="row">
+    <div class="sobre">
+        <img class="sobre-img" th:src="@{/css/img/jade.jpeg}" alt="">
+        <h4> Jade </h4>
+        <h6> Presidente, Fundadora</h6>
+        <p> 
+            A Jade Pi Santana Rassweiler Duarte é a fundadora peluda da empresa,
+            a Jade também agora toma conta de todas as empresas PiCorp™, pois de acordo com a πblia, quando a Pi se fosse, ela voltaria como outro cão 1 dia depois.
+        </p>
+    </div>
+    <div class="sobre">
+        <div class="sobre-pi">
+        <img class="sobre-img" th:src="@{/css/img/pi.jpg}" alt="">
+        <h4> Pi </h4>
+        <h6> Presidente, Fundadora</h6>
+        <p> 
+            A Pi Santana Rassweiler Duarte foi a fundadora peluda das empresas PiCorp™,
+            a Pi já nos deixou, porém, deixou um grande legado a sua sucessora Jade. 
+        </p>
+    </div>
+        <div class="sobre-pi-oculto">
+            <img class="sobre-img" th:src="@{/css/img/jade.jpeg}" alt="Imagem 50% Pi 50% Jade">
+            <h4> Jade </h4>
+            <h6> Pi, Presidente, Fundadora </h6>
+        <p>
+            A Pi não se foi para sempre, ela simplesmente fez luzes no pelo, entrou numa máquina de lavar para encolher e foi no cartório trocar seu nome para Jade.
+        </p>
+        </div>
+    </div>
+    <div class="sobre">
+        <img class="sobre-img" th:src="@{/css/img/me.jpg}" alt="">
+        <h4> Bryan Rassweiler </h4>
+        <h6> Co-Fundador, Desenvolvedor</h6>
+        <p> 
+            Bryan Rassweiler é o único desenvolvedor das empresas PiCorp™ e JCorp™, e ele gostaria de utilizar deste espaço para dizer que nunca foi pago por isso.
+        </p>
+    </div>
+    <div class="sobre">
+        <img class="sobre-img" th:src="@{/css/img/cao.jpg}" alt="">
+        <h4> Cães </h4>
+        <h6> Funcionários</h6>
+        <p> 
+            Sem nossos cães-funcionários, nada seria da JSoft™, é por causa deles que somos a empresa canina de tecnologia Nº1 na América Canina.
+        </p>
+    </div>
+    </div>
+
+    <footer>
+    <div class="txtfooter">
+        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
+    </div>
+    
+</footer>
+</body>
+<script>
+    function toggleDarkMode() {
+    var dmBody = document.body;
+    dmBody.classList.toggle("dark-mode");
+  }
+</script>
+</html>
