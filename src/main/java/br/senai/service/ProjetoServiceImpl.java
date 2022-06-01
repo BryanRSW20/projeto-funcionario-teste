@@ -3,6 +3,7 @@ package br.senai.service;
 import br.senai.model.Funcionario;
 import br.senai.model.Projeto;
 import br.senai.repository.ProjetoRepository;
+import com.sun.jdi.event.ExceptionEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,9 +33,11 @@ public class ProjetoServiceImpl implements ProjetoService{
 
     @Override
     public Projeto save(Projeto projeto){
-        try {
+        try{
             return projetoRepository.save(projeto);
-        }catch (Exception e){
+
+        }
+        catch(Exception e){
             throw e;
         }
     }

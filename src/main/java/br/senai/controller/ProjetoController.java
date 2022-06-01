@@ -37,15 +37,20 @@ public class ProjetoController {
     @PostMapping("/projeto/save")
     public String save(Projeto projeto, Model model){
         try{
-            projetoService.save(projeto);
-            model.addAttribute("projeto", projeto);
+
+            Projeto saveProjeto = projetoService.save(projeto);
+            model.addAttribute("projeto", saveProjeto);
             model.addAttribute("isSaved", true);
+            model.addAttribute("isError", false);
+
             return "projeto/add";
         } catch (Exception e){
+
             model.addAttribute("projeto", projeto);
+            model.addAttribute("isSaved", false);
             model.addAttribute("isError", true);
-            model.addAttribute("error", e.getMessage());
             return "projeto/add";
+
         }
     }
 }
