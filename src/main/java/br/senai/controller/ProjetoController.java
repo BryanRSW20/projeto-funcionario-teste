@@ -2,6 +2,8 @@ package br.senai.controller;
 
 import br.senai.model.Funcionario;
 import br.senai.model.Projeto;
+import br.senai.service.FuncionarioService;
+import br.senai.service.FuncionarioServiceImpl;
 import br.senai.service.ProjetoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,9 @@ public class ProjetoController {
     @Autowired
     ProjetoServiceImpl projetoService;
 
+    @Autowired
+    FuncionarioServiceImpl funcionarioService;
+
     @GetMapping("/projeto/list")
     public String findAll(Model model){
         model.addAttribute("projetos", projetoService.findAll());
@@ -25,6 +30,7 @@ public class ProjetoController {
     @GetMapping("/projeto/add")
     public String add(Model model){
         model.addAttribute("projeto", new Projeto());
+        model.addAttribute("funcionarios", funcionarioService.findAll());
         return "projeto/add";
     }
 

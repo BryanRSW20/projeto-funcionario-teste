@@ -25,6 +25,12 @@ body {
   font-family: "Satisfy";
   text-decoration: underline;
 }
+.main h1 {
+  font-size: 4rem;
+  color: hsl(83deg, 94%, 47%);
+  font-family: "Satisfy";
+  text-decoration: underline;
+}
 .main-row {
   display: flex;
   align-items: center;
@@ -137,10 +143,6 @@ body {
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
 }
 .header h2 {
@@ -259,6 +261,20 @@ body {
   cursor: pointer;
   background: hsl(0deg, 0%, 10%);
   color: hsl(255deg, 100%, 100%);
+}
+
+.texto-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.texto-top-btn {
+  color: hsl(255deg, 100%, 100%);
+  background-image: linear-gradient(hsl(83deg, 94%, 47%), hsl(120deg, 88%, 26%));
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

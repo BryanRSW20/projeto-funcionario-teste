@@ -62,6 +62,10 @@ body{
         @include heading;
     }
 
+    h1{
+        @include heading;
+    }
+
     &-row{
         @include flex;
         flex-direction: row;
@@ -79,6 +83,7 @@ body{
         @include box-shadow;
         @include glass; 
     }
+
 }
 
 .nav{
@@ -186,8 +191,6 @@ body{
     }
 
     .header{
-        @include flex;
-        flex-direction: column;
         text-align: center;
 
         h2{
@@ -302,6 +305,19 @@ body{
                     color: hsl(255, 100%, 100%);
                 }
             }
+        }
+    }
+
+    .texto-top{
+        @include flex;
+        margin-top: 2rem;
+
+        &-btn{
+            color: hsl(255, 100%, 100%);
+            background-image: linear-gradient($cor-primaria, $cor-secundaria);
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 2rem;
         }
     }
 
