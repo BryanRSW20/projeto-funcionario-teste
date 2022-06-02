@@ -34,22 +34,26 @@
         </ul>
     </div>
 </nav>
-    <div class="texto-add">
-    <a class="botaoadd" href="./add"> Nova Entrada <i class="fa fa-plus"> </i></a>
+    <div class="texto-top">
+    <a class="texto-top-btn" href="./add"> Nova Entrada <i class="fa fa-plus"> </i></a>
   </div>
 
 
-    <main class="list-main">
+    <main class="main">
+
+      <h1> Funcionários JSoft </h1>
+
     <table class="table">
         <thead>
           <tr>
             <div class="bgCol">
-            <th scope="col">ID</th>
-              <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                  <th scope="col">CPF</th>
-                <th scope="col">Telefone</th>
-              <th scope="col">Editar</th>
+            <th>ID</th>
+              <th>Nome</th>
+                <th>Email</th>
+                  <th>CPF</th>
+                <th>Telefone</th>
+              <th >Editar</th>
+              <th> Excluir </th>
             
             </div>
 
@@ -68,7 +72,7 @@
          </tbody>
       </table>
 
-      <div class="modal" tabindex="-1" id="modalDeletar">
+      <!-- <div class="modal" tabindex="-1" id="modalDeletar">
         <div class="modal-title">
         <h2> Aviso </h2>
         <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"> 
@@ -81,15 +85,20 @@
             <button th:onclick="delete()" class="modal-buttons-delete"> <i class="fa fa-trash"></i>  Sim, deletar </button>
             <button data-bs-dismiss="modal" class="modal-buttons-cancel"> <i class="fa fa-ban"></i> Não, cancelar </button>
         </div>
-    </div>
+    </div> -->
     </main>
-<footer>
-    <br>
-    <div class="txtfooter">
-        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
-    </div>
-    
-</footer>
+    <footer class="footer">
+      <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>
+          Encontre-nos </p>
+
+      <div class="footer-content">
+
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+
+      </div>
+</footer> 
 </body>
 <script>
     function toggleDarkMode() {

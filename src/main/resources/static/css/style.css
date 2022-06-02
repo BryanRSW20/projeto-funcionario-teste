@@ -25,6 +25,12 @@ body {
   font-family: "Satisfy";
   text-decoration: underline;
 }
+.main h1 {
+  font-size: 4rem;
+  color: hsl(83deg, 94%, 47%);
+  font-family: "Satisfy";
+  text-decoration: underline;
+}
 .main-row {
   display: flex;
   align-items: center;
@@ -43,6 +49,23 @@ body {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(0.5rem);
   -webkit-backdrop-filter: blur(0.5rem);
+}
+.main .table {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  background-color: hsl(255deg, 100%, 100%);
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  margin: 1rem;
+}
+.main .table th {
+  font-size: 1.1em;
+}
+.main .table td {
+  padding: 1rem;
+}
+.main .table td a {
+  color: hsl(120deg, 88%, 26%);
 }
 
 .nav {
@@ -137,10 +160,6 @@ body {
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
 }
 .header h2 {
@@ -259,6 +278,25 @@ body {
   cursor: pointer;
   background: hsl(0deg, 0%, 10%);
   color: hsl(255deg, 100%, 100%);
+}
+
+.texto-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.texto-top-btn {
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  color: hsl(120deg, 88%, 26%);
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 2rem;
+  transition: 1s;
+}
+.texto-top-btn:hover {
+  color: hsl(255deg, 100%, 100%);
+  background-image: linear-gradient(hsl(83deg, 94%, 47%), hsl(120deg, 88%, 26%));
 }
 
 /*# sourceMappingURL=style.css.map */

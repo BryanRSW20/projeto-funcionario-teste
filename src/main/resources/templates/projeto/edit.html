@@ -8,35 +8,25 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title> JSoft | Projetos </title>
+    <title> JSoft | Funcionários </title>
 </head> 
 <body>
     
-  <nav class="nav">
-    <div class="nav-logo">
-        <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
-    </div>
-    <div class="nav-menu">
-        <ul>
-                <li><a href="/"> Home </a></li>
-                <li><a href="/sobre"> Sobre </a></li>
-                <li><a class="dropdown" href="/funcionario/list"> Gerência de Funcionário </a></li>
-                <li><a class="dropdown" href="/projeto/list"> Gerência de Projeto </a></li>
-                <li><a href="/teste"> Testes </a></li>
-                <!-- <ul>
-                    <li>
-                        <a href="#"> Lista de Funcionários </a>
-                        <a href="#"> Lista de Projetos </a>
-                        <a href="#"> Adicionar Funcionário </a>
-                        <a href="#"> Adicionar Projeto </a>
-                    </li>
-                </ul> -->
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar">
+      <div class="logo">
+          <span class="a"> JSoft |</span> <span class="b"> O futuro dos caninos </span>
+      </div>
+      <div class="navegacao">
+          <a href="/"> Home </a>
+          <a href="/sobre"> Sobre a JSoft </a>
+          <a id="btn" href="./list"> Gerenciamento de Funcionários </a>
+          <acronym title="Ativar/Desativar Modo Escuro"> <button class="botaodm" onclick="toggleDarkMode()"> <img style="width: 24px; height: 24px;" th:src="@{/css/img/brightness.png}" alt="Não deu não..."></button>  </acronym>
+      </div>
+
+  </nav>
 
   <div class="form-title">
-    <h1> Adicionar Projeto </h1>
+    <h1> Editar funcionário </h1>
   </div>
 
   <div th:if="${isSaved}" class="alerta-sucesso">
@@ -50,23 +40,23 @@
 
   <section class="form-add">
   <form th:action="@{/projeto/save}" method="POST" th:object="${projeto}">
-      <h3> Registre o Projeto </h3>
+      <h3> Registre o funcionário </h3>
         
         <label for="floatlabel-id"> ID (Identificação) </label> <br>
-      <input th:field="*{id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
+      <input th:field="${projeto.id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
 
-        <label for="floatlabel-nome"> Data Inicial </label> <br>
-      <input th:field="*{dataInicial}" id="floatlabel-data-ini" type="datetime-local" placeholder="Data Inicial" required> <br>
+      <label for="floatlabel-nome"> Data Inicial </label> <br>
+      <input th:field="${projeto.dataInicial}" id="floatlabel-data-ini" type="datetime-local" placeholder="Data Inicial" required> <br>
         
-        <label for="floatlabel-cpf"> Data Final </label> <br>
-      <input  th:field="*{dataFinal}" id="floatlabel-data-fim" type="datetime-local" placeholder="Data Final" required> <br>
-        
-        <label for="floatlabel-email"> Nome do Projeto </label> <br>
-      <input  th:field="*{nome}" id="floatlabel-nome" type="text" placeholder="Nome do Projeto" required> <br>
+      <label for="floatlabel-cpf"> Data Final </label> <br>
+      <input  th:field="${projeto.dataFinal}" id="floatlabel-data-fim" type="datetime-local" placeholder="Data Final" required> <br>
+
+      <label for="floatlabel-email"> Nome do Projeto </label> <br>
+      <input  th:field="${projeto.nome}" id="floatlabel-nome" type="text" placeholder="Nome do Projeto" required> <br>
     
-        <label for="floatlabel-tel"> Orçamento </label> <br>
+      <label for="floatlabel-tel"> Orçamento </label> <br>
       <input th:field="*{orcamento}" id="floatlabel-orcamento" type="number" placeholder="Orçamento" required> <br>
-      
+    
       <label for="floatlabel-tel"> Status </label> <br>
       <!-- <input th:field="*{status}" id="floatlabel-status" type="text" placeholder="Status" required> <br> -->
       <select class="select-form" aria-label="Selecionar status" th:field="*{status}" required>
@@ -85,20 +75,26 @@
         
         <div class="form-add-btn">
       <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
-      <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
+      <button onclick="window.location.href='../list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
         </div>
   </form>
 
   
 
 </section>
-<footer>
-    <br>
-    <div class="txtfooter">
-        A JSoft™ é uma empresa PiSoft™, que também é uma empresa RSWsoft™
-    </div>
-    
-</footer>
+
+<footer class="footer">
+  <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>
+      Encontre-nos </p>
+
+  <div class="footer-content">
+
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+
+  </div>
+</footer> 
 </body>
 <script>
     function toggleDarkMode() {
