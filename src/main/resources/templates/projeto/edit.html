@@ -65,17 +65,10 @@
         <option value="Em andamento"> Em Andamento </option>
         <option value="Concluído"> Concluído </option>
       </select>
-
-      <select class="select-form" aria-label="Selecionar Funcionário" th:field="*{funcionarios}" required multiple>
-        <option 
-        th:each="fn : ${funcionarios}" 
-        th:value=${fn.id} 
-        th:text="${fn.nome}"> Selecionar Conce </option>
-      </select>
         
         <div class="form-add-btn">
       <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
-      <button onclick="window.location.href='../list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
+      <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
         </div>
   </form>
 
