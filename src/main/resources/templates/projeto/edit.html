@@ -46,10 +46,10 @@
       <input th:field="${projeto.id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
 
       <label for="floatlabel-nome"> Data Inicial </label> <br>
-      <input th:field="${projeto.dataInicial}" id="floatlabel-data-ini" type="datetime-local" placeholder="Data Inicial" required> <br>
+      <input th:field="${projeto.dataInicial}" id="floatlabel-data-ini" type="date" placeholder="Data Inicial" required> <br>
         
       <label for="floatlabel-cpf"> Data Final </label> <br>
-      <input  th:field="${projeto.dataFinal}" id="floatlabel-data-fim" type="datetime-local" placeholder="Data Final" required> <br>
+      <input  th:field="${projeto.dataFinal}" id="floatlabel-data-fim" type="date" placeholder="Data Final" required> <br>
 
       <label for="floatlabel-email"> Nome do Projeto </label> <br>
       <input  th:field="${projeto.nome}" id="floatlabel-nome" type="text" placeholder="Nome do Projeto" required> <br>
@@ -68,7 +68,7 @@
         
         <div class="form-add-btn">
       <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
-      <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
+      <button onclick="window.location.href='../list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
         </div>
   </form>
 

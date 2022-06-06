@@ -22,7 +22,6 @@
                 <li><a href="/sobre"> Sobre </a></li>
                 <li><a class="dropdown" href="/funcionario/list"> Gerência de Funcionário </a></li>
                 <li><a class="dropdown" href="/projeto/list"> Gerência de Projeto </a></li>
-                <li><a href="/teste"> Testes </a></li>
                 <!-- <ul>
                     <li>
                         <a href="#"> Lista de Funcionários </a>
@@ -34,7 +33,7 @@
         </ul>
     </div>
 </nav>
-
+  <main class="main">
   <div class="form-title">
     <h1> Adicionar Projeto </h1>
   </div>
@@ -48,18 +47,16 @@
     <label th:text="#{errorMsg}"></label>
   </div>
 
-  <section class="form-add">
   <form th:action="@{/projeto/save}" method="POST" th:object="${projeto}">
-      <h3> Registre o Projeto </h3>
         
         <label for="floatlabel-id"> ID (Identificação) </label> <br>
       <input th:field="*{id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
 
         <label for="floatlabel-nome"> Data Inicial </label> <br>
-      <input th:field="*{dataInicial}" id="floatlabel-data-ini" type="datetime-local" placeholder="Data Inicial" required> <br>
+      <input th:field="*{dataInicial}" id="floatlabel-data-ini" type="date" placeholder="Data Inicial" required> <br>
         
         <label for="floatlabel-cpf"> Data Final </label> <br>
-      <input  th:field="*{dataFinal}" id="floatlabel-data-fim" type="datetime-local" placeholder="Data Final" required> <br>
+      <input  th:field="*{dataFinal}" id="floatlabel-data-fim" type="date" placeholder="Data Final" required> <br>
         
         <label for="floatlabel-email"> Nome do Projeto </label> <br>
       <input  th:field="*{nome}" id="floatlabel-nome" type="text" placeholder="Nome do Projeto" required> <br>
@@ -89,9 +86,11 @@
         </div>
   </form>
 
-  
+  <!-- <div class="alerta-sucesso">
+    <h4> Operação Realizada Com Sucesso </h4> <i class="fa fa-check-circle"></i>
+  </div> -->
 
-</section>
+</main>
 <footer>
     <br>
     <div class="txtfooter">

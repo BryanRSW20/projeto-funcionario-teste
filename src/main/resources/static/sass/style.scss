@@ -34,6 +34,7 @@
 $cor-primaria: hsl(83, 94%, 47%);
 $cor-secundaria: hsl(120, 88%, 26%);
 $cor-fundo: hsl(0, 0%, 93%);
+$branco: hsl(255, 100%, 100%);
 // $bg-color-dark: hsl(0, 0%, 10%);
 $ff-title: 'Satisfy';
 $ff-body: 'IBM Plex Sans Arabic';
@@ -69,23 +70,126 @@ body{
     &-row{
         @include flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: row wrap;
     }
 
     &-card{
         flex: 30%;
         margin: 1%;
-        max-width: 25%;
+        width: 33%;
         flex-wrap: wrap;
-        width: 100%;
         border-radius: 2rem;
         text-align: center;
         @include box-shadow;
         @include glass; 
     }
 
-}
+    &-top{
+        @include flex;
+        margin-top: 2rem;
 
+        a{
+            color: hsl(0, 0%, 0%);
+            background: $branco;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 400ms, color 400ms;
+
+           &:hover{
+                box-shadow: 0 0 .5rem hsla(0, 0%, 0%, 0.146);
+                color: $cor-primaria;
+           }
+        }
+    }
+
+    &-row{
+        @include flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        img{
+            @include box-shadow;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 3rem;
+        }
+
+        &-card{
+            @include flex;
+            @include box-shadow;
+            margin: 1%;
+            flex-direction: column;
+            flex: 25%;
+            background-color: $branco;
+            padding: 3rem;
+            border-radius: 2rem;
+
+            &-header{
+                @include flex;
+                flex-direction: row;
+
+                &-title{
+                    @include flex;
+                    flex-direction: column;
+                    }
+        }
+
+        }
+    }
+
+    table{
+        @include box-shadow;
+        background: $branco;
+        padding: 3rem;
+        text-align: center;
+        border-radius: 2rem;
+
+        th{
+            color: $cor-primaria;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            padding: .5rem;
+        }
+
+        td{
+            font-weight: 400;
+            font-size: 1.1em;
+            padding: 1rem;
+        }
+
+        a{
+            color: $cor-primaria;
+            padding: 1rem;
+            border-radius: 50%;
+            transition: color 700ms, background 700ms;
+
+            &:hover{
+                color: $cor-secundaria;
+            }
+        }
+    }
+
+    form{
+        @include flex;
+        @include box-shadow;
+        flex-direction: column;
+        background-color: $branco;
+        padding: 3rem 12rem;
+        border-radius: 2rem;
+
+        input{
+            border: 1px solid $cor-primaria;
+            padding: 1rem;
+            border-radius: 2rem;
+            outline: none;
+            max-width: 15rem;
+            // input[type="date"]::-webkit-calendar-picker-indicator 
+        }
+    }
+}
 .nav{
     @include flex;
     @include glass;
@@ -154,7 +258,7 @@ body{
                 transform: scaleX(0);
                 -webkit-transform-origin: center;
                 transform-origin: center;
-                transition: -webkit-transform 250ms ease-in;
+                transition: -webkit-transform 350ms ease-in-out;
             }
 
             &:hover::after{
@@ -307,17 +411,3 @@ body{
             }
         }
     }
-
-    .texto-top{
-        @include flex;
-        margin-top: 2rem;
-
-        &-btn{
-            color: hsl(255, 100%, 100%);
-            background-image: linear-gradient($cor-primaria, $cor-secundaria);
-            padding: 1rem;
-            text-decoration: none;
-            border-radius: 2rem;
-        }
-    }
-
