@@ -11,48 +11,42 @@
     <title> JSoft | O Futuro dos caninos </title>
 </head> 
 <body>
-    <header class="header">
-        <span class="header-nav-a"> JSoft |</span> <span class="header-nav-b"> O futuro dos caninos </span>
-        <nav class="header-nav">
-            <div class="header-nav-logo">
-               
-            </div>
-        <div class="header-nav-menu">
-            <label class="menu-icon" for="menu-toggle"><i class="fa fa-bars"></i></label>
-                <input type="checkbox" id="menu-toggle">
-                    <ul class="header-nav-menu-main">
-                        <li><a href="/"> Home </a></li>
-                        <li><a href="/sobre"> Sobre </a></li>
-                        <li><a class="dropdown" href="/funcionario/list"> Gerência de Funcionário </a></li>
-                        <li><a class="dropdown" href="/projeto/list"> Gerência de Projeto </a></li>
-                        <li><a href="/login"> Faça Login </a></li>
-                        <li><a href="/teste"> Testes </a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+        </div>
+        <div class="nav-menu">
+            <ul>
+                    <li><a href="/"> Home </a></li>
+                    <li><a href="/sobre"> Sobre </a></li>
+                    <li><a class="dropdown" href="/funcionario/list"> Gerência de Funcionário </a></li>
+                    <li><a class="dropdown" href="/projeto/list"> Gerência de Projeto </a></li>
+                    <li><a href="/login"> Faça Login </a></li> ou 
+                    <li><a href="/login"> Cadastre-se </a></li>
+                    <!-- <ul>
+                        <li>
+                            <a href="#"> Lista de Funcionários </a>
+                            <a href="#"> Lista de Projetos </a>
+                            <a href="#"> Adicionar Funcionário </a>
+                            <a href="#"> Adicionar Projeto </a>
+                        </li>
+                    </ul> -->
+            </ul>
+        </div>
+    </nav>
          <button title="Ativar/Desativar Modo Escuro" class="btn-dark-mode" onclick="toggleDarkMode()">
              <i class="fa fa-sun"></i> </button>  
 
-  
-    <header class="header" id="header">
-        <h2> O que podemos desenvolver para você hoje? </h2>
-        <div class="img"> <img style="width: 70%;height: 640px; border-radius: 18px;" th:src="@{/css/img/foto-header.jpg}" alt=""> </div>
-    </header>
-
     <main class="main">
-        <h2> Projetos JSoft </h2>
+            <h1> Vamos entrar? </h1>
+        <form th:action="@{login/save}">
+            <label for="inputEmail"> Endereço de email </label>
+            <input type="email" placeholder="Ex: nome@exemplo.com">
+            <label for="inputSenha"> Senha </label>
+            <input type="password" placeholder="Senha">
 
-        <div class="main-card">
-            <h4> PiCred </h4>
-            <p> Website de créditos e recargas online </p>
-        </div>
-
-        
-        <div class="main-card">
-            <h4> 3,14 Milhas </h4>
-            <p> Website de compras de passagens aéreas online </p>
-        </div>
+        </form>
 
     </main>
 

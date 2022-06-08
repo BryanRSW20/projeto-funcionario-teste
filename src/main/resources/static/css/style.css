@@ -150,8 +150,24 @@ body {
   outline: none;
   max-width: 15rem;
 }
+/* ############## */
+/* Inicio Navbar */
+/* ############# */
 
-.nav {
+.header{
+  font-family: "Satisfy", cursive;
+  color: hsl(83deg, 94%, 47%);
+}
+
+.header-a{
+  font-size: 3rem;
+}
+
+.header-b{
+  font-size: 2rem;
+}
+
+.header-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,40 +182,18 @@ body {
   flex-direction: row;
   background: hsla(0deg, 0%, 100%, 0.7);
 }
-.nav-a {
-  font-size: 4rem;
-}
-.nav-b {
-  font-size: 2rem;
-}
-.nav-logo {
-  flex: 45%;
-  margin-left: 5%;
-  font-family: "Satisfy";
-  color: hsl(83deg, 94%, 47%);
-}
-.nav-menu {
-  flex: 45%;
-  margin-right: 5%;
-  text-align: right;
-}
-.nav-menu ul {
+.header-nav-menu ul {
   list-style: none;
 }
-.nav-menu ul ul a {
-  display: none;
-}
-.nav-menu ul li {
-  display: inline-block;
-}
-.nav-menu a {
+
+.header-nav-menu a {
   position: relative;
   text-decoration: none;
   color: hsl(83deg, 94%, 47%);
-  padding: 1rem 1rem;
+  padding: .5rem .5rem;
   font-weight: 700;
 }
-.nav-menu a::after {
+.header-nav-menu a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -213,13 +207,56 @@ body {
   transform-origin: center;
   transition: -webkit-transform 350ms ease-in-out;
 }
-.nav-menu a:hover::after {
+.header-nav-menu a:hover::after {
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: center;
   transform-origin: center;
 }
 
+.header-nav-menu-main{
+  display: none;
+  background: hsl(0, 0%, 100%, 0.7);
+  margin: 0 auto;
+  text-align: center;
+  font-size: .9em;
+  border-radius: .5rem;
+}
+
+.header-nav-menu-main li{
+  text-align: center;
+}
+
+.header-nav-menu-main a{
+  display: inline-block;
+}
+
+#menu-toggle{
+  display: none;
+}
+
+#menu-toggle:checked + .nav-menu-main{
+  display: block;
+}
+
+@media screen and (min-width: 505px){
+  .header-nav-menu-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background: transparent;
+  }
+
+  .menu-icon{
+    display: none;
+  }
+}
+
+
+/* ############## */
+/* Fim Navbar */
+/* ############# */
 .btn-dark-mode {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   border: none;
@@ -362,5 +399,6 @@ body {
   background: hsl(0deg, 0%, 10%);
   color: hsl(255deg, 100%, 100%);
 }
+
 
 /*# sourceMappingURL=style.css.map */

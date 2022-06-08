@@ -12,5 +12,15 @@ public class IndexController {
 
     @GetMapping("/sobre")
     public String sobre() {return "sobre";}
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/teste")
+    public String teste() {
+        return "teste";
+    }
                     
 }
