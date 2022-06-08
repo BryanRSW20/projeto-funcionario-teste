@@ -68,3 +68,13 @@ const verificarCep = function(){
             console.log(e);
         })
     }
+
+    function NavToggle() {
+
+        var x = document.getElementById("NavMenu");
+        if (x.className === "nav-menu") {
+            x.className += "responsive";
+        }else{
+            x.className = "nav-menu"
+        }
+    }

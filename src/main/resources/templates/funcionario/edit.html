@@ -12,18 +12,27 @@
 </head> 
 <body>
     
-    <nav class="navbar">
-      <div class="logo">
-          <span class="a"> JSoft |</span> <span class="b"> O futuro dos caninos </span>
-      </div>
-      <div class="navegacao">
-          <a href="/"> Home </a>
-          <a href="/sobre"> Sobre a JSoft </a>
-          <a id="btn" href="./list"> Gerenciamento de Funcionários </a>
-          <acronym title="Ativar/Desativar Modo Escuro"> <button class="botaodm" onclick="toggleDarkMode()"> <img style="width: 24px; height: 24px;" th:src="@{/css/img/brightness.png}" alt="Não deu não..."></button>  </acronym>
-      </div>
-
-  </nav>
+  <nav class="nav">
+    <div class="nav-logo">
+        <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+    </div>
+<div class="nav-menu">
+            <ul class="nav-menu-main">
+                <li><a href="/"> Home </a></li>
+                <li><a href="/sobre"> Sobre </a></li>
+                <div class="dropdown">
+                    <li><a class="dropbtn" href="#"> Gerência </a></li>
+                    <div class="dropdown-content">
+                        <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
+                        <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
+                        <li><a href="/projeto/list"> Lista de Projetos </a></li>
+                        <li><a href="/projeto/add"> Adicionar Projeto </a></li>
+                    </div>
+                </div>
+                <li><a href="/login"> Faça Login </a></li>
+            </ul>
+    </div>
+</nav>
 
   <div class="form-title">
     <h1> Adicionar funcionário </h1>

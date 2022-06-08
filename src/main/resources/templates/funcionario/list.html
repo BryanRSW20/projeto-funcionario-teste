@@ -17,21 +17,21 @@
     <div class="nav-logo">
         <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
     </div>
-    <div class="nav-menu">
-        <ul>
+<div class="nav-menu">
+            <ul class="nav-menu-main">
                 <li><a href="/"> Home </a></li>
                 <li><a href="/sobre"> Sobre </a></li>
-                <li><a class="dropdown" href="/funcionario/list"> Gerência </a></li>
-                <li><a href="/teste"> Testes </a></li>
-                <!-- <ul>
-                    <li>
-                        <a href="#"> Lista de Funcionários </a>
-                        <a href="#"> Lista de Projetos </a>
-                        <a href="#"> Adicionar Funcionário </a>
-                        <a href="#"> Adicionar Projeto </a>
-                    </li>
-                </ul> -->
-        </ul>
+                <div class="dropdown">
+                    <li><a class="dropbtn" href="#"> Gerência </a></li>
+                    <div class="dropdown-content">
+                        <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
+                        <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
+                        <li><a href="/projeto/list"> Lista de Projetos </a></li>
+                        <li><a href="/projeto/add"> Adicionar Projeto </a></li>
+                    </div>
+                </div>
+                <li><a href="/login"> Faça Login </a></li>
+            </ul>
     </div>
 </nav>
     
@@ -45,7 +45,7 @@
         <a href="./add"> Nova Entrada <i class="fa fa-plus"> </i></a>
       </div>
 
-    <table class="table">
+    <table style="overflow-x: auto;" class="table">
         <thead>
           <tr>
             <div class="bgCol">
