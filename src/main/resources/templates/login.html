@@ -28,7 +28,7 @@
                             <li><a href="/projeto/add"> Adicionar Projeto </a></li>
                         </div>
                     </div>
-                    <li><a href="/login"> Faça Login </a></li>
+                    <li><a class="active" href="/login"> Faça Login </a></li>
                 </ul>
         </div>
     </nav>
@@ -37,12 +37,22 @@
 
     <main class="main">
             <h1> Vamos entrar? </h1>
-        <form th:action="@{login/save}">
-            <label for="inputEmail"> Endereço de email </label>
-            <input type="email" placeholder="Ex: nome@exemplo.com">
-            <label for="inputSenha"> Senha </label>
-            <input type="password" placeholder="Senha">
-
+        <form style="margin-bottom: 2%;" th:action="@{login/save}">
+                <h2> SGST </h2> <h3> Sistema de Gestão Shih Tzu </h3>
+                    <label for="inputEmail"> Endereço de email </label>
+                    <input type="email" placeholder="Ex: nome@exemplo.com">
+                    <label for="inputSenha"> Senha </label>
+                    <input type="password" placeholder="Senha">
+            <div class="remember">
+                <input type="checkbox" name="" id="lembrar">
+                <label for="lembrar"> Mantenha-me Conectado </label>
+            </div>
+            <div class="btn">
+                <button class="button accept"> <span> <i class="fa fa-check-circle"></i> </span> </button>
+                <button class="button refuse"> <span> <i class="fa fa-ban"></i> </span> </button>
+            </div>
+                <br>
+                <h6 style="color: rgb(145, 145, 145);"> SGST Powered By PiSoft & RSWsoft. &copy; 2022. </h6>
         </form>
 
     </main>

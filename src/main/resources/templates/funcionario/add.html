@@ -24,7 +24,7 @@
                             <li><a class="dropbtn" href="#"> Gerência </a></li>
                             <div class="dropdown-content">
                                 <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
-                                <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
+                                <li><a class="active" href="/funcionario/add"> Adicionar Funcionários </a></li>
                                 <li><a href="/projeto/list"> Lista de Projetos </a></li>
                                 <li><a href="/projeto/add"> Adicionar Projeto </a></li>
                             </div>
@@ -39,9 +39,7 @@
 </acronym>
 
 
-  <div class="form-title">
-    <h1> Adicionar funcionário </h1>
-  </div>
+ 
 
   <div th:if="${isSaved}" class="alerta-sucesso">
     <h4> Operação Realizada com sucesso! </h4> <i class="fa fa-check-square"></i> 
@@ -52,7 +50,11 @@
     <label th:text="#{errorMsg}"></label>
   </div>
 
-  <section class="form-add">
+  <main class="main">
+    <div class="form-title">
+      <h2> Adicionar funcionário </h2>
+    </div>
+
   <form th:action="@{/funcionario/save}" method="POST" th:object="${funcionario}">
       <h3> Registre o funcionário </h3>
         
@@ -70,18 +72,16 @@
     
         <label for="floatlabel-tel"> Telefone </label> <br>
       <input th:field="*{telefone}" id="floatlabel-tel" type="text" placeholder="Telefone" required> <br>
-
-      <label for=""></label>
-        
+      
         <div class="form-add-btn">
-      <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
-      <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
+      <button type="submit" class="button save"> <span> <i class="fa fa-check"></i> </span> </button>
+      <button onclick="window.location.href='./list'" type="button" class="button cancel"> <span> <i class="fa fa-ban"></i> </span> </button>
         </div>
   </form>
 
   
 
-</section>
+</main>
 <footer class="footer">
   <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>
       Encontre-nos </p>

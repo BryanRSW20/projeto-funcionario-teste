@@ -47,7 +47,7 @@ body {
 
   .nav-menuresponsive a {
     float: none;
-    display: inline-block;
+    display: block;
     text-align: left;
   }
 }
@@ -124,6 +124,20 @@ body {
   transform-origin: center;
   -webkit-transform-origin: center;
 }
+.nav ul li a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  border-radius: 3rem;
+  background-color: hsl(120deg, 88%, 26%);
+  transform: scaleX(0.3);
+  -webkit-transform: scaleX(0.3);
+  transform-origin: center;
+  -webkit-transform-origin: center;
+}
 
 .dropdown {
   display: inline;
@@ -149,6 +163,25 @@ body {
 
 .dropbtn {
   display: inline;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.5rem);
+  -webkit-backdrop-filter: blur(0.5rem);
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  color: hsl(83deg, 94%, 47%);
+}
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .main {
@@ -263,6 +296,9 @@ body {
   font-size: 1.1em;
   padding: 1rem;
 }
+.main table tr:nth-child(even) {
+  background-color: hsla(83deg, 94%, 47%, 0.4);
+}
 .main table a {
   color: hsl(83deg, 94%, 47%);
   padding: 1rem;
@@ -272,7 +308,8 @@ body {
 .main table a:hover {
   color: hsl(120deg, 88%, 26%);
 }
-.main form {
+
+form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -282,12 +319,156 @@ body {
   padding: 3rem 12rem;
   border-radius: 2rem;
 }
-.main form input {
-  border: 1px solid hsl(83deg, 94%, 47%);
+form input {
+  border: 1px solid hsl(0deg, 0%, 65%);
   padding: 1rem;
   border-radius: 2rem;
   outline: none;
   max-width: 15rem;
+  transition: all 750ms;
+}
+form input:focus {
+  border: 1px solid hsl(83deg, 94%, 47%);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  background-color: rgb(169, 169, 169);
+  border-radius: 50%;
+  padding: 1rem;
+  border: none;
+  color: hsl(255deg, 100%, 100%);
+  transition: width 1s, border-radius 1s;
+}
+
+.accept {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.accept span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.accept span::after {
+  content: "Entrar";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 20px;
+  transition: 0.5s;
+}
+.accept:hover {
+  background-color: hsl(120deg, 88%, 26%);
+  width: 9rem;
+  border-radius: 2rem;
+  transition: all 1s;
+}
+.accept:hover span {
+  padding-right: 3rem;
+}
+.accept:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.save {
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 1s;
+}
+.save span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.save span::after {
+  content: "Enviar";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 20px;
+  transition: 0.5s;
+}
+.save:hover {
+  background-color: hsl(120deg, 88%, 26%);
+  width: 9rem;
+  border-radius: 2rem;
+  transition: all 1s;
+}
+.save:hover span {
+  padding-right: 3rem;
+}
+.save:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.refuse {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.refuse span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.refuse span::after {
+  content: "Voltar";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 20px;
+  transition: 0.5s;
+}
+.refuse:hover {
+  background-color: hsl(0deg, 100%, 50%);
+  width: 9rem;
+  border-radius: 2rem;
+  transition: width 1s, border-radius 500ms;
+}
+.refuse:hover span {
+  padding-right: 3rem;
+}
+.refuse:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.cancel {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.cancel span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.cancel span::after {
+  content: "Abortar";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 4rem;
+  transition: 0.5s;
+}
+.cancel:hover {
+  background-color: hsl(0deg, 100%, 50%);
+  width: 9rem;
+  border-radius: 2rem;
+  transition: width 1s, border-radius 500ms;
+}
+.cancel:hover span {
+  padding-right: 3rem;
+}
+.cancel:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 .btn-dark-mode {
@@ -323,33 +504,6 @@ body {
 }
 .header img {
   background-size: cover;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(0.5rem);
-  -webkit-backdrop-filter: blur(0.5rem);
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-  position: relative;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  flex-direction: column;
-}
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  color: hsl(83deg, 94%, 47%);
-  font-size: 1.5rem;
-}
-.footer p {
-  color: hsl(83deg, 94%, 47%);
-  text-align: center;
 }
 
 .modal {
