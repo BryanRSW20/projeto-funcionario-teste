@@ -23,7 +23,6 @@ public class Agenda {
     private String descricao;
 
     @Column(name = "data")
-    @NotNull
     private Date data;
 
     public Long getId() {

@@ -28,7 +28,7 @@ public class AgendaController {
     @GetMapping("/agenda/add")
     public String add(Model model){
         model.addAttribute("agenda", new Agenda());
-        model.addAttribute("agenda", agendaService.findAll());
+        model.addAttribute("agendas", agendaService.findAll());
         return "agenda/add";
     }
 
