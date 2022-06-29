@@ -61,31 +61,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="agenda:${funcionario3a}">
+          <tr th:each="agenda:${agendas}">
             <th scope="row" th:text="${agenda.id}"></th>
              <td th:text="${agenda.nome}"></td>
-                <td th:text="${agenda.email}"></td>
-                 <td th:text="${agenda.cpf}"></td>
-                 <td th:text="${agenda.telefone}"></td>
+             <td th:text="${agenda.descricao}"></td>
+             <td th:text="${#dates.format(agenda.data, 'dd-MM-yyyy')}"></td>
                 <td> <a class="botaoadd" th:href="@{'./edit/' + ${agenda.id}}"><i class="fa fa-pencil"></i></a></td>
           </tr>
          </tbody>
       </table>
 
-      <!-- <div class="modal" tabindex="-1" id="modalDeletar">
-        <div class="modal-title">
-        <h2> Aviso </h2>
-        <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"> 
-          <i class="fa fa-times-circle"></i> 
-        </button>
-    </div>
-        <p> Você está prestes a deletar um registro, essa ação é <span class="modal-perm"> permanente </span> 
-         <strong>Deseja continuar?</strong> </p>
-        <div class="modal-buttons">
-            <button th:onclick="delete()" class="modal-buttons-delete"> <i class="fa fa-trash"></i>  Sim, deletar </button>
-            <button data-bs-dismiss="modal" class="modal-buttons-cancel"> <i class="fa fa-ban"></i> Não, cancelar </button>
-        </div>
-    </div> -->
     </main>
     <footer class="footer">
       <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>

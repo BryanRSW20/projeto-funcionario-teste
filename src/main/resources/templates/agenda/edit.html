@@ -48,24 +48,21 @@
   </div>
 
   <section class="form-add">
-  <form th:action="@{/funcionario/save}" method="POST" th:object="${funcionario}">
+  <form th:action="@{/agenda/save}" method="POST" th:object="${agenda}">
       <h3> Registre o funcionário </h3>
         
         <label for="floatlabel-id"> ID (Identificação) </label> <br>
-      <input th:field="${funcionario.id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
+      <input th:field="${agenda.id}" id="floatlabel-id" type="number" placeholder="ID" readonly> <br>
 
-        <label for="floatlabel-nome"> Nome Completo </label> <br>
-      <input th:field="${funcionario.nome}" id="floatlabel-nome" type="text" placeholder="Nome" required> <br>
+        <label for="floatlabel-nome"> Título </label> <br>
+      <input th:field="${agenda.nome}" id="floatlabel-nome" type="text" placeholder="Título" required> <br>
         
-        <label for="floatlabel-cpf"> CPF </label> <br>
-      <input  th:field="${funcionario.cpf}"id="floatlabel-cpf" type="text" placeholder="CPF" required> <br>
+        <label for="floatlabel-cpf"> Descrição </label> <br>
+      <input  th:field="${agenda.descricao}"id="floatlabel-cpf" type="text" placeholder="Descrição" required> <br>
         
-        <label for="floatlabel-email"> Email </label> <br>
-      <input  th:field="${funcionario.email}" id="floatlabel-email" type="email" placeholder="Email" required> <br>
+        <label for="floatlabel-email"> Data </label> <br>
+      <input  th:field="${agenda.data}" id="floatlabel-email" type="date" placeholder="Data" required> <br>
     
-        <label for="floatlabel-tel"> Telefone </label> <br>
-      <input th:field="${funcionario.telefone}" id="floatlabel-tel" type="text" placeholder="Telefone" required> <br>
-        
         <div class="form-add-btn">
       <button type="submit" class="btn btn-save"> Salvar <i class="fa fa-check"></i> </button>
       <button onclick="window.location.href='./list'" type="button" class="btn btn-dois"> Cancelar <i class="fa fa-ban"></i> </button>
