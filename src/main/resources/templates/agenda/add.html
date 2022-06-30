@@ -23,6 +23,7 @@
                         <div class="dropdown">
                             <li><a class="dropbtn" href="#"> Gerência </a></li>
                             <div class="dropdown-content">
+                              <li><a href="/agenda/list"> Agenda </a></li>
                                 <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
                                 <li><a class="active" href="/funcionario/add"> Adicionar Funcionários </a></li>
                                 <li><a href="/projeto/list"> Lista de Projetos </a></li>
@@ -73,8 +74,18 @@
       <input th:field="*{data}" id="floatlabel-nome" type="date" placeholder="Data" required> <br>
       
         <div class="form-add-btn">
-      <button type="submit" class="button save"> <span> <i class="fa fa-check"></i> </span> </button>
-      <button onclick="window.location.href='./list'" type="button" class="button cancel"> <span> <i class="fa fa-ban"></i> </span> </button>
+      <button type="submit" class="button accept">
+         <i class="fa fa-check"></i> 
+        <span> 
+          Registrar
+      </span> 
+    </button>
+      <button onclick="window.location.href='./list'" type="button" class="button refuse">
+        <i class="fa fa-ban"></i>
+         <span> 
+           Cancelar 
+        </span> 
+        </button>
         </div>
   </form>
 

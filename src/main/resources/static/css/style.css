@@ -33,6 +33,10 @@ body {
     float: right;
     display: block;
   }
+
+  form{
+    width: 95%;
+  }
 }
 @media screen and (max-width: 780px) {
   .nav-menuresponsive {
@@ -64,6 +68,7 @@ body {
   flex-direction: row;
   width: 100%;
   height: 6rem;
+  z-index: 9998;
 }
 .nav-menu {
   margin-right: 5%;
@@ -319,18 +324,7 @@ form {
   padding: 3rem 12rem;
   border-radius: 2rem;
 }
-form input {
-  border: 1px solid hsl(0deg, 0%, 65%);
-  padding: 1rem;
-  border-radius: 2rem;
-  outline: none;
-  max-width: 15rem;
-  transition: all 750ms;
-}
-form input:focus {
-  border: 1px solid hsl(83deg, 94%, 47%);
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-}
+
 
 .button {
   background-color: rgb(169, 169, 169);
@@ -338,135 +332,64 @@ form input:focus {
   padding: 1rem;
   border: none;
   color: hsl(255deg, 100%, 100%);
-  transition: all 1s;
+  cursor: pointer;
+  transition: all .65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.accept {
-  cursor: pointer;
+
+.button span{
+  cursor: inherit;
+  transition: all .75s;
+  display: none;
 }
-.accept span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: all 1s;
-}
-.accept span::after {
-  content: "Entrar";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 20px;
-  transition: all 1s;
-}
-.accept:hover {
+
+.accept:hover{
   background-color: hsl(120deg, 88%, 26%);
-  width: 9rem;
-  border-radius: 2rem;
-  transition: all 1s;
-}
-.accept:hover span {
-  padding-right: 3rem;
-  transition: all 1s;
-}
-.accept:hover span::after {
-  opacity: 1;
-  right: 0;
+  padding-right: 2rem;
+  border-radius: 3rem;
 }
 
-.save {
-  cursor: pointer;
-  transition: all 2s;
-}
-.save span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: all 2s;
-}
-.save span::after {
-  content: "Enviar";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 20px;
-  transition: all 1s;
-}
-.save:hover {
-  background-color: hsl(120deg, 88%, 26%);
-  width: 9rem;
-  border-radius: 2rem;
-  transition: all 1s;
-}
-.save:hover span {
-  padding-right: 3rem;
-}
-.save:hover span::after {
-  opacity: 1;
-  right: 0;
+.button:hover span{
+  display: inline;
+  margin-left: 1.5rem;
 }
 
-.refuse {
-  cursor: pointer;
-  border-radius: 50%;
-}
-.refuse span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-.refuse span::after {
-  content: "Voltar";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 20px;
-  transition: 0.5s;
-}
-.refuse:hover {
+.refuse:hover{
   background-color: hsl(0deg, 100%, 50%);
-  width: 9rem;
-  border-radius: 2rem;
-  transition: width 1s, border-radius 500ms;
-}
-.refuse:hover span {
-  padding-right: 3rem;
-}
-.refuse:hover span::after {
-  opacity: 1;
-  right: 0;
+  padding-right: 2rem;
+  border-radius: 3rem;
 }
 
-.cancel {
-  cursor: pointer;
-  border-radius: 50%;
-}
-.cancel span {
-  cursor: pointer;
-  display: inline-block;
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="email"] {
   position: relative;
-  transition: 0.5s;
+  border: none;
+  border-bottom: 2px solid hsl(0deg, 0%, 65%);
+  outline: none;
+  padding: 8px 12px;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  transition: all .7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.cancel span::after {
-  content: "Abortar";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: 4rem;
-  transition: 0.5s;
+
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="email"]:hover {
+  border-bottom-color: hsl(83deg, 94%, 47%);
 }
-.cancel:hover {
-  background-color: hsl(0deg, 100%, 50%);
-  width: 9rem;
-  border-radius: 2rem;
-  transition: width 1s, border-radius 500ms;
-}
-.cancel:hover span {
-  padding-right: 3rem;
-}
-.cancel:hover span::after {
-  opacity: 1;
-  right: 0;
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="email"]:focus{
+  border-bottom-color: hsl(120deg, 88%, 26%);
 }
 
 .btn-dark-mode {
@@ -505,50 +428,32 @@ form input:focus {
 }
 
 .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.modal-content{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
-  background: hsl(255deg, 100%, 100%);
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 32rem;
-  height: 20rem;
-  border-radius: 3rem;
-  text-align: center;
-}
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  color: hsl(0deg, 100%, 50%);
-}
-.modal-perm {
-  color: hsl(0deg, 100%, 50%);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.modal-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  border-bottom: 1px solid hsl(83deg, 94%, 47%);
+  background: hsl(0deg, 0%, 93%);
+  margin: 15% auto;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
 }
-.modal-title h2 {
-  font-size: 4rem;
-  color: hsl(83deg, 94%, 47%);
-  font-family: "Satisfy";
-  text-decoration: underline;
+
+.close{
+  color: hsl(0deg, 100%, 50%);
+  float: right;
 }
-.modal-title h4 {
-  font-size: 1rem;
-  color: hsl(83deg, 94%, 47%);
-  text-transform: uppercase;
-}
-.modal-buttons {
+
+dal-buttons {
   display: flex;
   align-items: center;
   justify-content: center;

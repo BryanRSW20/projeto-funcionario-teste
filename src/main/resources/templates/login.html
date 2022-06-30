@@ -22,6 +22,7 @@
                     <div class="dropdown">
                         <li><a class="dropbtn" href="#"> Gerência </a></li>
                         <div class="dropdown-content">
+                            <li><a href="/agenda/list"> Agenda </a></li>
                             <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
                             <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
                             <li><a href="/projeto/list"> Lista de Projetos </a></li>
@@ -39,8 +40,8 @@
             <h1> Vamos entrar? </h1>
         <form style="margin-bottom: 2%;" th:action="@{login/save}">
                 <h2> SGST </h2> <h3> Sistema de Gestão Shih Tzu </h3>
-                    <label for="inputEmail"> Endereço de email </label>
-                    <input type="email" placeholder="Ex: nome@exemplo.com">
+                    <label for="inputUser"> Nome de Usuário </label>
+                    <input type="text" maxlength="18" placeholder="Ex: Joãozinho123">
                     <label for="inputSenha"> Senha </label>
                     <input type="password" placeholder="Senha">
             <div class="remember">
@@ -48,13 +49,19 @@
                 <label for="lembrar"> Mantenha-me Conectado </label>
             </div>
             <div class="btn">
-                <button class="button accept"> 
+                <button class="button accept">
+                    <i class="fa fa-check-circle"></i>  
                     <span> 
-                        <i class="fa fa-check-circle"></i> 
+                        Entrar
                     </span>
                 
                 </button>
-                <button class="button refuse"> <span> <i class="fa fa-ban"></i> </span> </button>
+                <button class="button refuse">
+                    <i class="fa fa-ban"></i> 
+                    <span>  
+                        Cancelar
+                    </span> 
+                </button>
             </div>
                 <br>
                 <h6 style="color: rgb(145, 145, 145);"> SGST Powered By PiSoft & RSWsoft. &copy; 2022. </h6>

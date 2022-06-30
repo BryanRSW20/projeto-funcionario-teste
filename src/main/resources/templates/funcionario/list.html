@@ -24,6 +24,7 @@
                 <div class="dropdown">
                     <li><a class="dropbtn" href="#"> Gerência </a></li>
                     <div class="dropdown-content">
+                      <li><a href="/agenda/list"> Agenda </a></li>
                         <li><a class="active" href="/funcionario/list"> Lista de Funcionários </a></li>
                         <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
                         <li><a href="/projeto/list"> Lista de Projetos </a></li>
@@ -69,25 +70,26 @@
                  <td th:text="${funcionario.cpf}"></td>
                  <td th:text="${funcionario.telefone}"></td>
                 <td> <a class="botaoadd" th:href="@{'./edit/' + ${funcionario.id}}"><i class="fa fa-pencil"></i></a></td>
-                <td> <a class="botaoadd" th:onclick="|showModalDeletar('funcionario', ${funcionario.id})|"><i class="fa fa-trash"></i></a></td>
+                <td> <a class="botaoadd" id="openModal"><i class="fa fa-trash"></i></a></td>
           </tr>
          </tbody>
       </table>
 
-      <!-- <div class="modal" tabindex="-1" id="modalDeletar">
-        <div class="modal-title">
-        <h2> Aviso </h2>
-        <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Close"> 
-          <i class="fa fa-times-circle"></i> 
-        </button>
-    </div>
-        <p> Você está prestes a deletar um registro, essa ação é <span class="modal-perm"> permanente </span> 
-         <strong>Deseja continuar?</strong> </p>
-        <div class="modal-buttons">
-            <button th:onclick="delete()" class="modal-buttons-delete"> <i class="fa fa-trash"></i>  Sim, deletar </button>
-            <button data-bs-dismiss="modal" class="modal-buttons-cancel"> <i class="fa fa-ban"></i> Não, cancelar </button>
-        </div>
-    </div> -->
+     <!-- Modal -->
+
+     <div id="Modal" class="modal">
+
+      <div class="modal-content">
+        <span class="close"> &times; </span>
+        <h2> Espera aí </h2>
+        <h4> A ação que você está prestes a realizar é <b> IRREVERSÍVEL </b> </h4>
+        <p> Tem certeza que quer continuar? </p>
+        <button class="button accept"> <i class="fa fa-check"></i> <span> Continuar </span> </button>
+        <button class="button refuse"> <i class="fa fa-ban"></i> <span> Pensando melhor... </span> </button>
+      </div>
+
+     </div>
+
     </main>
     <footer class="footer">
       <p> JSoft é uma empresa PiSoft Ltda, PiCorp &copy; 2022. Todos os direitos reservados. <br>

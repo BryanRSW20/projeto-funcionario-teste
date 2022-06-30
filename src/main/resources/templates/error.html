@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="shortcut icon" th:href="@{/css/img/logo/logoJSoft.png}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title> JSoft | O Futuro dos caninos </title>
+</head> 
+<body>
+     
+        <nav class="nav">
+            <div class="nav-logo">
+                <span class="nav-a"> JSoft |</span> <span class="nav-b"> O futuro dos caninos </span>
+                <p class="logo-res"> JSoft </p>
+            </div>
+        <div id="NavMenu" class="nav-menu">
+                    <ul>
+                        <li> <a href="/"> Home </a></li>
+                        <li><a href="/sobre"> Sobre </a></li>
+                        <div class="dropdown">
+                            <li><a class="dropbtn" href="#"> Gerência </a></li>
+                            <div class="dropdown-content">
+                                <li><a href="/agenda/list"> Agenda </a></li>
+                                <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
+                                <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
+                                <li><a href="/projeto/list"> Lista de Projetos </a></li>
+                                <li><a href="/projeto/add"> Adicionar Projeto </a></li>
+                            </div>
+                        </div>
+                        <li><a  href="/login"> Faça Login </a></li>
+                        <li><a href="javascript:void(0)" class="icone" onclick="NavToggle()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    </ul>
+            </div>
+        </nav>
+         <button title="Ativar/Desativar Modo Escuro" class="btn-dark-mode" onclick="toggleDarkMode()">
+             <i class="fa fa-sun"></i> </button>  
+    <main class="main">
+        <h2> Jade, temos um problema </h2>
+        <i style="font-size: 8rem; color: hsl(83deg, 94%, 47%)" class="fa fa-exclamation-triangle"></i>
+        <h4> O URL não existe, ou o desenvolvedor não sabia o que estava fazendo </h4>
+        <p> Tente de novo mais tarde, ou, contate-nos em... Algum lugar </p>
+
+        <a href="/"> Voltar para o começo </a>
+
+    </main>
+
+</body>
+<script th:src="@{js/script.js}"></script>
+</html>
