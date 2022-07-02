@@ -7,6 +7,7 @@
 }
 
 body {
+  min-width: 100vh;
   background: hsl(0deg, 0%, 93%);
   transition: background-color 1s, color 1s;
   font-family: "IBM Plex Sans Arabic";

@@ -34,50 +34,44 @@ window.onclick = function(event){
     }
 }
 
-// const verificarCep = function(){
-//     let cep = $('#floatingInputCep').val().replace(/[^0-9]/,'')
-//     if (cep){
-//         let url = 'http://opencep.com/v1/' +  cep
-//         alert(url)
-//         $.ajax({
-//             url: url,
-//             method:'GET',
-//             dataType: 'json',
-//             contentType: "application/json",
-//             success: function(json){
-//                 console.log("voltou");
-//                 if(json.logradouro){
-//                     $('#floatingInputRua').val(json.logradouro)
-//                     $('#floatingInputBairro').val(json.bairro)
-//                     $('#floatingInputCidade').val(json.localidade)
-//                     $('#floatingInputUF').val(json.estado)
-//                 }
-//             }
-//         })
+//  Autenticação Login
 
-//     }
-// }
+    function armazenar(){
+        var name = document.getElementById('username');
 
-const verificarCep = function(){
-        let cep = $('#floatingInputCep').val().replace(/[^0-9]/,'')
-        if (cep){
-            let url = '/endereco/' +  cep
-            $.ajax({
-                url: url,
-                method:'GET',
-                dataType: 'json',
-                contentType: "application/json",
-                success: function(json){
-                    if(json.logradouro){
-                        $('#floatingInputLogradouro').val(json.logradouro)
-                        $('#floatingInputComplemento').val(json.complemento)
-                        $('#floatingInputBairro').val(json.bairro)
-                        $('#floatingInputLocalidade').val(json.localidade)
-                        $('#floatingInputUF').val(json.uf)
-                    }
-                }
-            })
-    
+        var senha = document.getElementById('senha');
+
+        var letraMinuscula = /[a-z]/g;
+
+        var letraMaiuscula = /[A-Z]/g;
+
+        var numeros = /[0-9]/g;
+
+        if(name.value.length == 0){
+            alert("Você precisa preencher o campo de nome");
+        } else if(senha.value.length == 0){
+            alert("Você precisa inserir uma senha")
+        } else if(name.value.length == 0 && senha.value.length == 0){
+            alert("Você precisa preencher os campos de nome e senha!")
+        } else{
+            localStorage.setItem('username', name.value);
+            localStorage.setItem('senha', senha.value);
+            alert('Sua conta foi criada, bem-vindo a JSoft!')
+        }
+    }
+
+    function checar() {
+        var lsUser = localStorage.getItem('username');
+        var lsSenha = localStorage.getItem('senha');
+
+        var UserName = document.getElementById('UserName');
+        var UserSenha = document.getElementById("UserSenha");
+
+        if(UserName.value = lsUser && UserSenha.value == lsSenha){
+            alert("Você está logado")
+            window.open('/agenda/list')
+        } else{
+            alert("Ocorreu um erro")
         }
     }
 

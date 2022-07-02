@@ -22,13 +22,13 @@
                     <div class="dropdown">
                         <li><a class="dropbtn" href="#"> Gerência </a></li>
                         <div class="dropdown-content">
-                            <li><a href="login"> Agenda </a></li>
+                            <li><a href="/login"> Agenda </a></li>
                             <li><a href="/funcionario/list"> Lista de Funcionários </a></li>
                             <li><a href="/funcionario/add"> Adicionar Funcionários </a></li>
                             <li><a href="/projeto/list"> Lista de Projetos </a></li>
                             <li><a href="/projeto/add"> Adicionar Projeto </a></li>
                         </div>
-                        <li><a href="/register"> Registre-se </a></li>
+                        <li><a class="active" href="/register"> Registre-se </a></li>
                     </div>
                 </ul>
         </div>
@@ -37,15 +37,19 @@
              <i class="fa fa-sun"></i> </button>  
 
     <main class="main">
-            <h1> Vamos entrar? </h1>
+            <h1> Cadastro </h1>
         <form style="margin-bottom: 2%;">
                 <h2> SGST </h2> <h3> Sistema de Gestão Shih Tzu </h3>
                     <label for="inputUser"> Nome de Usuário </label>
-                    <input id="UserName" type="text" maxlength="18" placeholder="Ex: Joãozinho123">
+                    <input id="username" type="text" maxlength="18" placeholder="Ex: Joãozinho123" required>
                     <label for="inputSenha"> Senha </label>
-                    <input id="UserSenha" type="password" placeholder="Senha">
+                    <input id="senha" type="password" placeholder="Senha" required>
+
+                    <span id="resultado-p">  </span>
+                    <span id="resultado-n">  </span>
+
             <div class="btn">
-                <button onclick="checar()" id="btnSend" class="button accept">
+                <button onclick="armazenar()" class="button accept">
                     <i class="fa fa-check-circle"></i>  
                     <span> 
                         Entrar
